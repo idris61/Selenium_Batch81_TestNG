@@ -6,11 +6,13 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class AmazonPage {
-    public AmazonPage(){ //Constructor oluşturup public yapmamız gerekir
+public class AmazonPage { // page sayfası oluşturduğumuzda yapacağımız ilk iş, Constructor oluşturup public yapmamız gerekir
+    public AmazonPage(){ // *** CONSTRUCTOR ***
 
-        PageFactory.initElements(Driver.getDriver(),this);
-
+        PageFactory.initElements(Driver.getDriver(),this);// page fabrikasına gidip, initElements diyip
+                                                               // Driver class'ındaki driver'ı bu class'a tanıtmalıyız.
+                                                               // locate yaparken driver'a ihtiyacımız var.
+    //*** Driver'i constuctor içinde çağırdık
     }
 
     @FindBy (id="twotabsearchtextbox")

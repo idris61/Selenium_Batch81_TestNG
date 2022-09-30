@@ -14,6 +14,12 @@ public abstract class TestBaseBeforeClassAfterClass {
     protected WebDriver driver;
 
     // @BeforeClass ve @AfterClass notasyonlarını TestNG de kullanırken JUnit'deki gibi static yapmaya gerek yoktur.
+      /*
+     TestNg bize daha fazla before ve after notasyonlari sunar
+     diger before/after notasyonlari tanimlayacagimiz
+     grup, test veya sut'den once ve sonra calisirlar
+     ileride xml dosyalari ile birlikte bunu gorecegiz
+     */
 
     @BeforeClass
     public void setUp(){

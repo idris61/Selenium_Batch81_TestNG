@@ -16,27 +16,40 @@ public class C03_SoftAssert extends TestBaseBeforeClassAfterClass {
         konsolda verir
          */
 
+        //*** SoftAssert başlangıcı obje oluşturmaktır.
         SoftAssert softAssert = new SoftAssert();
-        //1-amazon anasayfaya gidin
+
+        // 1-amazon anasayfaya gidin
         driver.get("https://amazon.com");
 
-        //2-title in Amazon içerdigini test edin
+        // 2-title in Amazon içerdigini test edin
         softAssert.assertTrue(driver.getTitle().contains("Amazon"),"Girdiğiniz kelimeyi içermiyor");
 
-        //3-arama kutusnun erişilebilir oldugunu tets edin
+        // 3-arama kutusnun erişilebilir oldugunu tets edin
         WebElement aramaKutusu = driver.findElement(By.id("twotabsearchtextbox"));
         softAssert.assertTrue(aramaKutusu.isEnabled(),"WE erişilemez");
 
-        //4-arama kutusuna Nuella yazıp aratın
+        // 4-arama kutusuna Nuella yazıp aratın
         aramaKutusu.sendKeys("Nutella", Keys.ENTER);
 
-        //5-arama yapıldıgını test edin
+        // 5-arama yapıldıgını test edin
         WebElement sonuc = driver.findElement(By.xpath("//*[@class='a-section a-spacing-small a-spacing-top-small']"));
         softAssert.assertTrue(sonuc.isDisplayed(),"SonucWE görüntülenemedi");
 
-        //6-arama sonucunun Nutella içerdigini test edin
+        // 6-arama sonucunun Nutella içerdigini test edin
         softAssert.assertTrue(sonuc.getText().contains("Nutella"),"Nutella içermiyor");
+
+        //*** SoftAssert'e bitiş satırını söylemek için assertAll() kullanılır.
+        //*** Bu satır yazılmazsa assertion görevi yapılmamış olur.
         softAssert.assertAll();
         System.out.println("Hata varsa burası çalışmaz");
+
+           /*
+        Softassert'un hata bulsa bile calismaya devam etme ozelligi
+        assertAll()'a kadardir.
+        Eger assertAll()'da failed rapor edilirse calisma durur
+        ve class'in kalan kismi calistirilmaz
+        (Yani assertAll hardAsserdeki her bir assert gibidir, hatayi yakalarsa calisma durur)
+         */
     }
 }

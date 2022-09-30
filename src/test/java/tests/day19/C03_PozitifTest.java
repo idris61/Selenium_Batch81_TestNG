@@ -1,4 +1,4 @@
-package tests.day18;
+package tests.day19;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
@@ -8,7 +8,7 @@ import pages.HmcPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 
-public class C03_ConfigReader {
+public class C03_PozitifTest {
 
     @Test
     public void test01() {
@@ -23,7 +23,7 @@ public class C03_ConfigReader {
 
         //test data username: manager ,
         //test data password : Manager1!
-        hmcPage.userName.sendKeys(ConfigReader.getProperty("userName"));
+        hmcPage.userName.sendKeys(ConfigReader.getProperty("hmcWrongUser"));
         Actions actions = new Actions(Driver.getDriver());
         actions.sendKeys(Keys.TAB).sendKeys(ConfigReader.getProperty("password"))
                 .sendKeys(Keys.ENTER).perform();

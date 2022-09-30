@@ -12,4 +12,13 @@ public class HmcPage {
 
     @FindBy(xpath = "//*[text()='Log in']")
     public WebElement login;
+    @FindBy(xpath = "//input[@id='UserName']")
+    public WebElement userName;
+    @FindBy(xpath = "(//a[@class='dropdown-toggle'])[1]")
+    public WebElement girisYapildi;
+
+    @FindBy(xpath = "//*[text()='Try again please']")
+    public WebElement girisYapilmadi;
+
+
 }

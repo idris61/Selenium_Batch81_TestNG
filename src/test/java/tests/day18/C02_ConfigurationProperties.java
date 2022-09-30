@@ -8,6 +8,7 @@ public class C02_ConfigurationProperties {
 
     @Test
     public void test01() {
+
         //Amazon sayfasına ve facebook sayfasına gidiniz
         String urlamzn = ConfigReader.getProperty("amznUrl");
         String urlFace = ConfigReader.getProperty("faceUrl");

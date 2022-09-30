@@ -8,6 +8,12 @@ import utilities.TestBaseBeforeClassAfterClass;
 import utilities.TestBaseBeforeMethodAfterMethod;
 
 public class C04_DependsOnMethod extends TestBaseBeforeClassAfterClass {
+
+    /*
+      DependsOnMethods test method'larinin calisma siralamasina karismaz
+      Sadece bagli olan test, baglandigi testin sonucuna bakar
+      baglandigi test PASSED olmazsa, baglanan test hic calismaz(ignore)
+     */
     @Test
     public void test1() {
         // amazon ana sayfasına gidelim

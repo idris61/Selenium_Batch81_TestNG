@@ -6,7 +6,7 @@ import utilities.Driver;
 
 public class FacebookPage {
 
-    public FacebookPage() {
+    public FacebookPage() { // HER PAGE OLUŞTURDUĞUMUZDA YAPACAĞIMIZ İLK İŞ.!!!
 
         PageFactory.initElements(Driver.getDriver(), this);
 
