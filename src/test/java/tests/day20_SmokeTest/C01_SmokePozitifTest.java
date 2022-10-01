@@ -1,4 +1,4 @@
-package tests.day18;
+package tests.day20_SmokeTest;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
@@ -8,14 +8,12 @@ import pages.HmcPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 
-public class C03_ConfigReader {
-
+public class C01_SmokePozitifTest {
     @Test
-    public void test01() {
+    public void pozitifTest() {
 
         //https://www.hotelmycamp.com/ adresine git  login butonuna bas
-        Driver.getDriver().get(ConfigReader.getProperty("hmcUrl")); // ConfigReader class'ına git,
-                                                                // oradaki getProperty() methoduyla ==> "hmcUrl" in karşılığını getir.
+        Driver.getDriver().get(ConfigReader.getProperty("hmcUrl"));
 
         HmcPage hmcPage = new HmcPage();
         //Page class'ındki locate'lerimize ulaşabilmek için, Page class'ımızdan bir obje oluşturduk.
@@ -24,7 +22,7 @@ public class C03_ConfigReader {
 
         //test data username: manager ,
         //test data password : Manager1!
-        hmcPage.userName.sendKeys(ConfigReader.getProperty("userName"));
+        hmcPage.userName.sendKeys(ConfigReader.getProperty("hmcWrongUser"));
         Actions actions = new Actions(Driver.getDriver());
         actions.sendKeys(Keys.TAB).sendKeys(ConfigReader.getProperty("password"))
                 .sendKeys(Keys.ENTER).perform();
@@ -33,12 +31,6 @@ public class C03_ConfigReader {
         Assert.assertTrue(hmcPage.girisYapildi.isDisplayed());
 
         Driver.closeDriver();
-
-
-
-
-
-
 
     }
 }

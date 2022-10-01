@@ -11,6 +11,7 @@ public class ConfigReader {
         String dosyaYolu = "configuration.properties";
         try {
             FileInputStream fis = new FileInputStream(dosyaYolu);
+            // fis dosyayolunu tanımladığımız configuration.properties dosyasını okudu
             properties = new Properties();
             properties.load(fis); // fis'in okuduğu bilgileri properties'e yükledi
         } catch (IOException e) {

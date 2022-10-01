@@ -6,7 +6,7 @@ import utilities.Driver;
 
 public class FacebookPage {
 
-    public FacebookPage() { // HER PAGE OLUŞTURDUĞUMUZDA YAPACAĞIMIZ İLK İŞ.!!!
+    public FacebookPage() { // HER PAGE OLUŞTURDUĞUMUZDA YAPACAĞIMIZ İLK İŞ CONSTRUCTOR OLUŞTURMAK.!!!
 
         PageFactory.initElements(Driver.getDriver(), this);
 
@@ -18,6 +18,7 @@ public class FacebookPage {
     public WebElement sifre;
     @FindBy(xpath = "//*[@class='_9ay7']")
     public WebElement girisYapilmadi;
+
     @FindBy(xpath = "//*[@class='_42ft _4jy0 _6lth _4jy6 _4jy1 selected _51sy']")
     public WebElement login;
 

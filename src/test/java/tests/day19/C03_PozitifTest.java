@@ -11,7 +11,7 @@ import utilities.Driver;
 public class C03_PozitifTest {
 
     @Test
-    public void test01() {
+    public void pozitifTest() {
 
         //https://www.hotelmycamp.com/ adresine git  login butonuna bas
         Driver.getDriver().get(ConfigReader.getProperty("hmcUrl"));
@@ -32,12 +32,6 @@ public class C03_PozitifTest {
         Assert.assertTrue(hmcPage.girisYapildi.isDisplayed());
 
         Driver.closeDriver();
-
-
-
-
-
-
 
     }
 }

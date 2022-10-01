@@ -3,6 +3,7 @@ package utilities;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
@@ -23,6 +24,14 @@ public class Driver { // İSTEDİĞİMİZ ZAMAN DRIVER'I GETİRECEK, İSTEDİĞ�
         çalıştığı için ve değer atandığı için null olmayacak ve direk return edecek ve diğer
         teslerimiz aynı pencere(driver) üzerinde çalışacak
         */
+        /*
+         POM'da Driver classindaki getDriver() ile obje olusturularak kullanilmasini
+        engellemek icin Singleton pattern kullanimi benimsemistir.
+        Singleton Pattern: tekli kullanim, bir class'in farkli classlardan
+        obje olusturularak kullanimi engellemk icin kullanilir.
+        bunu yapmamiz icin obje olusturmak icin kullanilan constructor'i private yaptigimiz zaman
+        baska classlardan Driver classindan obje olusturulmasi mumkun olamaz.
+         */
     private Driver(){
 
     }
@@ -32,7 +41,8 @@ public class Driver { // İSTEDİĞİMİZ ZAMAN DRIVER'I GETİRECEK, İSTEDİĞ�
                                             // void yapmıyoruz cunku biz driver ile methodlari çalıştıracağız. Bize driver
                                             // dondurmesi lazim ki, getDriver() methodundan sonra driver methodlarina ulasabilelim
         if (driver==null) {          // burda driverin değeri null ise yani driver açık değilse bize driveri açsın,çalıştırsın
-            switch (ConfigReader.getProperty("browser")){
+
+            switch (ConfigReader.getProperty("browser")){ // configuration.properties deki "browser"'ın karşılığındaki değer
                 case "chrome" :
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver();
@@ -44,6 +54,10 @@ public class Driver { // İSTEDİĞİMİZ ZAMAN DRIVER'I GETİRECEK, İSTEDİĞ�
                 case "safari" :
                     WebDriverManager.safaridriver().setup();
                     driver = new SafariDriver();
+                    break;
+                case "headless-chrome" :  // arka planda çalışıp, sonucu döndürüyor.
+                    WebDriverManager.chromedriver().setup();
+                    driver = new ChromeDriver(new ChromeOptions().setHeadless(true));
                     break;
                 default:
                     WebDriverManager.edgedriver().setup();
