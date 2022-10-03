@@ -18,3 +18,11 @@ ona göre .xml formatını yazmamız gerekir.
         </classes>
     </test>
 </suite>
+
+
+<!--
+ Bir xml dosyası ile projemizden istediğimiz testleri, package'leri, class'ları veya test method'larını
+ çalıştırabiliriz.
+ Bunun için yapmamız gereken; suit'den başlayıp test hiyerarşisine uygun olarak çalışacak tüm testleri
+ xml formatında yazmamızdır.
+ -->

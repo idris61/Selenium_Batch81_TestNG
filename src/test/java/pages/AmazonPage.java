@@ -16,9 +16,14 @@ public class AmazonPage { // page sayfası oluşturduğumuzda yapacağımız ilk
     }
 
     @FindBy (id="twotabsearchtextbox")
-    public WebElement aramaKutusu;
+    public static WebElement aramaKutusu;
 
     @FindBy (xpath = "//div[@class='a-section a-spacing-small a-spacing-top-small']")
     public WebElement aramaSonucWE;
+
+    @FindBy(xpath = "(//span[@class='a-size-medium a-color-base a-text-normal'])[1]")
+    public static WebElement nutellaIlkUrun;
+
+
 
 }
