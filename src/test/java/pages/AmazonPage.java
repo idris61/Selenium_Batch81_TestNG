@@ -12,7 +12,9 @@ public class AmazonPage { // page sayfası oluşturduğumuzda yapacağımız ilk
         PageFactory.initElements(Driver.getDriver(),this);// page fabrikasına gidip, initElements diyip
                                                                // Driver class'ındaki driver'ı bu class'a tanıtmalıyız.
                                                                // locate yaparken driver'a ihtiyacımız var.
-    //*** Driver'i constuctor içinde çağırdık
+    // *** Driver'i constuctor içinde çağırdık
+    // *** Aslinda PageFactory class’ina, elementlere ilk degeri atayan initElements( ) metodunu kullanmak
+        // icin ihtiyacimiz var
     }
 
     @FindBy (id="twotabsearchtextbox")
@@ -21,7 +23,7 @@ public class AmazonPage { // page sayfası oluşturduğumuzda yapacağımız ilk
     @FindBy (xpath = "//div[@class='a-section a-spacing-small a-spacing-top-small']")
     public WebElement aramaSonucWE;
 
-    @FindBy(xpath = "(//span[@class='a-size-medium a-color-base a-text-normal'])[1]")
+    @FindBy(xpath = "//*[text()='Nutella Chocolate Hazelnut Spread, Perfect Topping for Pancakes, 35.2 oz Jar']")
     public static WebElement nutellaIlkUrun;
 
 

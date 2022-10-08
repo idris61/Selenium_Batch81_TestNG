@@ -3,7 +3,12 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
-
+    /*
+    ***  ConfigReader class test method’larimiz ile Configuration.properties arasinda iletisimis aglar.
+    ***  Bu class’da test class’larindan kolayca ulasmak icin static method bulunur.
+    ***  Method static oldugundan method icerisinden cagiracagimiz variable da static olmalidir.
+    ***  Kullanacagimiz static variable’a ilk degeri atamak icin(instantiate) de static block kullaniriz.
+     */
 public class ConfigReader {
 
     public static Properties properties;

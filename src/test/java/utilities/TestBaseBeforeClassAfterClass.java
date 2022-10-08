@@ -21,7 +21,7 @@ public abstract class TestBaseBeforeClassAfterClass {
      ileride xml dosyalari ile birlikte bunu gorecegiz
      */
 
-    @BeforeClass
+    @BeforeClass (groups = "grup1")
     public void setUp(){
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
@@ -29,7 +29,7 @@ public abstract class TestBaseBeforeClassAfterClass {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
     }
 
-    @AfterClass
+    @AfterClass (groups = "grup1")
     public void tearDown(){
         // driver.close();
     }

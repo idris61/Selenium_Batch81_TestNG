@@ -24,8 +24,9 @@ public class C03_Priority extends TestBaseBeforeMethodAfterMethod{
         driver.get("https://www.bestbuy.com");
     }
 
-    @Test (priority = 2)
+    @Test (priority = 2, groups = "grup1")
     public void amazonTest() {
         driver.get("https://www.amazon.com");
     }
+
 }

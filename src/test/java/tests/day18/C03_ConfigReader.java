@@ -10,7 +10,7 @@ import utilities.Driver;
 
 public class C03_ConfigReader {
 
-    @Test
+    @Test (groups = "grup2")
     public void test01() {
 
         //https://www.hotelmycamp.com/ adresine git  login butonuna bas
@@ -33,12 +33,6 @@ public class C03_ConfigReader {
         Assert.assertTrue(hmcPage.girisYapildi.isDisplayed());
 
         Driver.closeDriver();
-
-
-
-
-
-
 
     }
 }

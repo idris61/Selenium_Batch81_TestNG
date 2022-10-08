@@ -51,7 +51,7 @@ public class C03_1_SofrAssert extends TestBaseBeforeMethodAfterMethod {
         // 9. soft assert kullanarak "Eurozone (Euro)" secildigini test edin
         SoftAssert softAssert=new SoftAssert(); // sof assert dediği için softAssert objesini oluşturuyoruz.
         String secilenOption= select.getFirstSelectedOption().getText(); // seçileni getir dedik
-        String expectedOption="Eurozone (Euro)";
+        String expectedOption="Eurozone (euro)";
         softAssert.assertEquals(secilenOption,expectedOption,"secilen option uygun degil");
 
         // 10. soft assert kullanarak DropDown listesinin su secenekleri oldugunu test edin "Select One",
@@ -68,6 +68,7 @@ public class C03_1_SofrAssert extends TestBaseBeforeMethodAfterMethod {
         List<String> optionListString = new ArrayList<>();
         for (WebElement each : optionList) {
             optionListString.add(each.getText());
+
         }
 
         Collections.sort(ulkeler);
