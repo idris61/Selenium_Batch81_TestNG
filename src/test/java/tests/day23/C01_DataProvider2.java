@@ -22,7 +22,7 @@ public class C01_DataProvider2 {
         Driver.getDriver().get(ConfigReader.getProperty("amznUrl"));
 
         //java, selenium, samsung ve iphone icin arama yapalim
-        AmazonPage.aramaKutusu.sendKeys(kelimeler, Keys.ENTER);
+        amazonPage.aramaKutusu.sendKeys(kelimeler, Keys.ENTER);
 
         //sonuclarin aradigimiz kelime icerdigini test edelim
         String actualKelime = amazonPage.aramaSonucWE.getText();

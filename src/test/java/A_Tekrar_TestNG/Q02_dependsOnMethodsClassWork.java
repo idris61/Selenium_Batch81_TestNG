@@ -27,12 +27,12 @@ public class Q02_dependsOnMethodsClassWork  {
 
         //Test : 1.Test basarili ise search Box’i kullanarak “Nutella” icin
         //arama yapin ve aramanizin gerceklestigini Test edin
-        AmazonPage.aramaKutusu.sendKeys("Nutella", Keys.ENTER);
+        amazonPage.aramaKutusu.sendKeys("Nutella", Keys.ENTER);
 
         //Test : “Nutella” icin arama yapildiysa ilk urunu tiklayin ve fiyatinin
         //$16.83 oldugunu test edin
 
-        AmazonPage.nutellaIlkUrun.click();
+        amazonPage.nutellaIlkUrun.click();
         Driver.getDriver().findElement(By.xpath("//*[text()=' See All Buying Options ']")).click();
         Thread.sleep(1000);
         Driver.getDriver().findElement(By.xpath("//input[@name='submit.addToCart']")).click();

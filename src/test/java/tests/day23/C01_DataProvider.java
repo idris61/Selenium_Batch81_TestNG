@@ -20,7 +20,7 @@ public class C01_DataProvider {
         Driver.getDriver().get(ConfigReader.getProperty("amznUrl"));
 
         //Nutella için arama yapalım
-        AmazonPage.aramaKutusu.sendKeys("Nutella", Keys.ENTER);
+        amazonPage.aramaKutusu.sendKeys("Nutella", Keys.ENTER);
 
         //sonuclarin nutella icerdigini test edelim
         String expectedKelime = "Nutella";
@@ -42,7 +42,7 @@ public class C01_DataProvider {
         Driver.getDriver().get(ConfigReader.getProperty("amznUrl"));
 
         //java, selenium, samsung ve iphone icin arama yapalim
-        AmazonPage.aramaKutusu.sendKeys(kelimeler, Keys.ENTER);
+        amazonPage.aramaKutusu.sendKeys(kelimeler, Keys.ENTER);
 
         //sonuclarin aradigimiz kelime icerdigini test edelim
         String actualKelime = amazonPage.aramaSonucWE.getText();

@@ -18,13 +18,13 @@ public class AmazonPage { // page sayfası oluşturduğumuzda yapacağımız ilk
     }
 
     @FindBy (id="twotabsearchtextbox")
-    public static WebElement aramaKutusu;
+    public WebElement aramaKutusu;
 
     @FindBy (xpath = "//div[@class='a-section a-spacing-small a-spacing-top-small']")
     public WebElement aramaSonucWE;
 
     @FindBy(xpath = "//*[text()='Nutella Chocolate Hazelnut Spread, Perfect Topping for Pancakes, 35.2 oz Jar']")
-    public static WebElement nutellaIlkUrun;
+    public WebElement nutellaIlkUrun;
 
 
 
